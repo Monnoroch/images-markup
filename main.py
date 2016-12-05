@@ -175,6 +175,16 @@ def main_mark_images(args):
     parser.add_argument("--start-after", dest="start_after", required=False, help="An image to start from.")
     args = parser.parse_args(args)
 
+    print("Starting the image editor.")
+    print()
+    print("To mark an area just click the left mouse key and move the cursor as if selecting it.")
+    print("The selected rectangle automatically gets normalized to a square.")
+    print()
+    print("To move a selection click on it with the right mouse key and move the cursor whule holding it pressed.")
+    print()
+    print("To delete a selection, click on it with the right mouse key and while pressing it hit the 'd' key on the keyboard.")
+    print()
+
     try:
         window_name = "frame"
         cv2.namedWindow(window_name)
