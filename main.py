@@ -184,6 +184,8 @@ def main_mark_images(args):
     print()
     print("To delete a selection, click on it with the right mouse key and while pressing it hit the 'd' key on the keyboard.")
     print()
+    print("To finish editing selections, dump them to a file and move on to the next image press ESC.")
+    print()
 
     try:
         window_name = "frame"
