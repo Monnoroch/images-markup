@@ -190,7 +190,7 @@ def main_mark_images(args):
 
     try:
         window_name = "frame"
-        cv2.namedWindow(window_name)
+        cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
         if args.rewrite:
             result = open(args.description, "w")
         else:
