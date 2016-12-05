@@ -169,10 +169,11 @@ class Editor(object):
 
 def main_mark_images(args):
     parser = argparse.ArgumentParser(description="Markup gaps on images.")
-    parser.add_argument("--images", required=True, help="A directory with all the images.")
+    parser.add_argument("--images", required=True, help="A directory with all the images. This directory has to ONLY contail images.")
     parser.add_argument("--description", required=True, help="A resulting text file with metadata.")
     parser.add_argument("--rewrite", action="store_true", default=False, help="Rewrite the description file rather than append to it.")
-    parser.add_argument("--start-after", dest="start_after", required=False, help="An image to start from.")
+    parser.add_argument("--start-after", dest="start_after", required=False, help="An image to start from. "
+        + "If specified, all the images before and inclusive this one will be ignored. Useful to continue marking up after stopping the precess.")
     args = parser.parse_args(args)
 
     print("Starting the image editor.")
@@ -184,7 +185,7 @@ def main_mark_images(args):
     print()
     print("To delete a selection, click on it with the right mouse key and while pressing it hit the 'd' key on the keyboard.")
     print()
-    print("To finish editing selections, dump them to a file and move on to the next image press ESC.")
+    print("To finish editing selections and dump them to a file press ESC.")
     print()
 
     try:
