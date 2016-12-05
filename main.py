@@ -77,7 +77,7 @@ class Editor(object):
         self.start_rect_move = None
 
     def load(self):
-        self.image = cv2.imread(self.file, 0)
+        self.image = cv2.imread(self.file)
         if self.image is None:
             raise ValueError("Could not load image " + self.file)
         cv2.setMouseCallback(self.window_name, self.mouse_callback)
@@ -185,7 +185,7 @@ def main_mark_images(args):
     print()
     print("To delete a selection, click on it with the right mouse key and while pressing it hit the 'd' key on the keyboard.")
     print()
-    print("To finish editing selections and dump them to a file press ESC.")
+    print("To finish editing selections, dump them to a file and move on to the next image press ESC.")
     print()
 
     try:
